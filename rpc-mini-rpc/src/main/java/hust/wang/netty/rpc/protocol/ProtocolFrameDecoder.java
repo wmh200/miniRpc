@@ -1,0 +1,18 @@
+package hust.wang.netty.rpc.protocol;
+
+import io.netty.handler.codec.LengthFieldBasedFrameDecoder;
+/**
+ * @Author wangmh
+ * @Date 2021/6/25 下午4:58
+ **/
+
+public class ProtocolFrameDecoder extends LengthFieldBasedFrameDecoder {
+    public ProtocolFrameDecoder() {
+        this(1024, 12, 4, 0, 0);
+    }
+
+
+    public ProtocolFrameDecoder(int maxFrameLength, int lengthFieldOffset, int lengthFieldLength, int lengthAdjustment, int initialBytesToStrip) {
+        super(maxFrameLength, lengthFieldOffset, lengthFieldLength, lengthAdjustment, initialBytesToStrip);
+    }
+}
